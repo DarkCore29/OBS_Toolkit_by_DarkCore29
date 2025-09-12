@@ -16,8 +16,8 @@
 
 .NOTES
     Autor: DarkCore29 (Y si, me ayudo una IA)
-    Version: 1.0
-    Fecha: 2025-04-05
+    Version: 1.1
+    Fecha: 2025-08-22
 #>
 
 #--------------------------------------------------------
@@ -192,18 +192,40 @@ if ($IsPS7) {
             Write-Log -Message "Usuario eligio instalar PowerShell 7" -Level "INFO"
             Install-PowerShell7
 
-            Start-Sleep -Seconds 3
+            Start-Sleep -Seconds 4
             $NewPath = Get-Item -Path "C:\Program Files\PowerShell\7\pwsh.exe", "C:\Program Files\PowerShell\7-*\pwsh.exe" -ErrorAction SilentlyContinue | Where-Object { Test-Path $_.FullName } | Sort-Object Name -Descending | Select-Object -First 1
 
             if ($NewPath) {
-                Write-Log -Message "PowerShell 7 instalado. Reiniciando toolkit..." -Level "OK"
-                $ScriptPath = $MyInvocation.MyCommand.Path
-                $ArgsPS = "-ExecutionPolicy", "Bypass", "-File", "`"$ScriptPath`""
-                Start-Process -FilePath $NewPath.FullName -ArgumentList $ArgsPS -WorkingDirectory $ScriptRoot -Verb RunAs -Wait
-                exit
+                Write-Log -Message "PowerShell 7 instalado. Buscando ejecutable..." -Level "OK"
+    
+                # Esperar un momento para que el sistema registre el instalador
+                Start-Sleep -Seconds 5
+
+                # Volver a buscar
+                $FinalPath = Get-Item -Path "C:\Program Files\PowerShell\7\pwsh.exe", "C:\Program Files\PowerShell\7-*\pwsh.exe" -ErrorAction SilentlyContinue | Where-Object { Test-Path $_.FullName } | Sort-Object Name -Descending | Select-Object -First 1
+
+                # Refrescar el entorno
+                $env:PATH = [System.Environment]::GetEnvironmentVariable("PATH", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("PATH", "User")
+
+                if ($FinalPath) {
+                    Write-Log -Message "PowerShell 7 detectado. Reiniciando..." -Level "OK"
+                    $ScriptPath = $MyInvocation.MyCommand.Path
+                    Start-Process -FilePath $FinalPath.FullName -ArgumentList "-ExecutionPolicy Bypass -File `"$ScriptPath`"" -WorkingDirectory $ScriptRoot -Verb RunAs
+                    exit
+                } else {
+                    # Segunda oportunidad: refrescar el entorno
+                    Write-Host "PowerShell 7 instalado, pero no se detecta aún. Por favor:" -ForegroundColor Yellow
+                    Write-Host "  1) Cierre este script." -ForegroundColor White
+                    Write-Host "  2) Vuelva a abrir 'Iniciar-Toolkit.bat' como administrador." -ForegroundColor White
+                    Write-Host "El sistema ya lo reconocerá." -ForegroundColor Green
+                    Write-Log -Message "PS7 instalado pero no detectado. Reiniciar el script." -Level "WARN"
+                    pause
+                    exit
+                }
             } else {
-                Write-Host "PowerShell 7 no se detecto tras instalacion." -ForegroundColor Red
-                Write-Host "Reinicie el script manualmente." -ForegroundColor Yellow
+                Write-Host "PowerShell 7 no se pudo instalar o detectar. Asegúrelo manualmente." -ForegroundColor Red
+                Write-Host "Descargue desde: https://aka.ms/powershell" -ForegroundColor Cyan
+                Write-Log -Message "PS7 no instalado ni detectado. Proceso detenido." -Level "ERROR"
                 pause
                 exit
             }
@@ -246,7 +268,7 @@ function Invoke-SanitizeZoneIdentifier {
 function Show-Menu {
     cls
     Write-Host "========================================" -ForegroundColor DarkMagenta
-    Write-Host "      OBS Toolkit V1 - by DarkCore29" -ForegroundColor Magenta
+    Write-Host "    OBS Toolkit V1.1 - by DarkCore29" -ForegroundColor Magenta
     Write-Host "========================================" -ForegroundColor DarkMagenta
     Write-Host ""
     Write-Host "  [1] Respaldar OBS"
