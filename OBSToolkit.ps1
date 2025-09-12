@@ -16,8 +16,8 @@
 
 .NOTES
     Autor: DarkCore29 (Y si, me ayudo una IA)
-    Version: 1.1
-    Fecha: 2025-08-22
+    Version: 1.0
+    Fecha: 2025-08-10
 #>
 
 #--------------------------------------------------------
