@@ -1,169 +1,77 @@
-# OBS Toolkit by DarkCore29
+# 📜 OBS Toolkit – Licencia de Uso y Distribución  
+**Copyright (c) 2025 DarkCore29 – contact.darkcore29@gmail.com**
 
 ---
 
-## 🇪🇸 Español
+## 🇪🇸 ESPAÑOL
 
-Herramienta de respaldo, recuperación y mantenimiento para OBS Studio.
+### 1. Uso gratuito  
+Este software se distribuye de forma 100% gratuita para cualquier persona u organización.  
+Se permite su uso personal y/o profesional sin coste alguno.
 
-**Versión:** 1.0  
-**Autor:** DarkCore29  
-**Compatible con:** Windows 7/10/11 | OBS Studio (modo normal y portable)
+### 2. Donaciones  
+Se aceptan donaciones voluntarias para apoyar el desarrollo.  
+Las donaciones pueden realizarse únicamente a través del enlace oficial incluido en los archivos `"Readme.txt"` y `"Leeme.txt"` del proyecto.
 
----
+### 3. Prohibición de venta  
+No está permitido vender, revender o comercializar este software, total o parcialmente, bajo ninguna circunstancia, salvo autorización expresa y por escrito del autor.  
+El autor se reserva el derecho exclusivo de venderlo en el futuro si así lo decide.
 
-### 📌 ¿Qué hace esta herramienta?
+### 4. Canales oficiales de distribución  
+La redistribución de este software solo está permitida a través de los canales oficiales del autor:  
+- **Servidor oficial de Discord** (enlace en los archivos README y en el perfil de GitHub)  
+- **Perfil oficial de GitHub del autor**  
 
-#### 1. ✅ Respaldar OBS
-- Configuraciones, escenas, perfiles, plugins y carpetas personalizadas.
-- Archivos de la carpeta raíz y de AppData.
-- Carpetas `Assets` o `assets` (mayúsculas/minúsculas).
-- Detecta y respalda automáticamente archivos multimedia (`.mp4`, `.png`, `.mp3`, etc.) usados en escenas, incluso si están fuera de `Assets`.
-- Genera un archivo `.zip` con verificación **SHA256**.
-- Evita duplicados si los assets ya están en la carpeta `Assets`.
+Queda prohibida la redistribución por cualquier otro medio o servicio que modifique los enlaces oficiales, altere el contenido del script o cambie su presentación original.
 
-#### 2. ✅ Recuperar OBS
-- Restaura desde un respaldo `.zip` o carpeta.
-- Opción de restaurar assets:
-  - En sus rutas originales.
-  - O en una carpeta segura: `Assets Recuperados`.
-- Verifica integridad antes de restaurar.
+### 5. Modificaciones y responsabilidad  
+Este software es de código abierto: cualquier persona puede revisar su código.  
+La autoría y derechos de este proyecto siguen perteneciendo exclusivamente al autor.  
+Si un tercero modifica este software y lo distribuye por canales no autorizados, el autor no se hace responsable de posibles daños, fallos o problemas que dichas versiones puedan causar en sistemas de terceros.
 
-#### 3. ✅ Limpiar logs y caché
-- Borra archivos temporales de OBS para liberar espacio.
-- Muestra cuántos archivos y GB/MB se eliminarán antes de confirmar.
+### 6. Limitación de garantía  
+Aunque el software ha sido diseñado y probado con cuidado, no es 100% infalible.  
+Se proporciona **"tal cual"**, sin garantías de ningún tipo, expresas o implícitas.  
+El uso de este software es bajo su propio riesgo.
 
-#### 4. ✅ Mantenimiento automatizado
-- Detecta automáticamente OBS Studio (instalado o portable).
-- Requiere **PowerShell 7** (se instala automáticamente si no está presente).
-- Incluye detección y descarga automática de **7-Zip** (opcional).
+### 7. Solicitudes de redistribución  
+Cualquier persona natural o empresa que desee redistribuir este software, incluso de forma gratuita, debe contactar previamente al autor para obtener autorización expresa.
 
 ---
 
-### 🖱 Cómo usarlo
-1. Haga clic derecho en `Iniciar-Toolkit.bat`
-2. Seleccione **"Ejecutar como administrador"**
-3. Siga las opciones del menú.
-
-> **Nota:** Se requiere ejecutar como administrador para acceso completo a archivos.
+> ✅ **Al utilizar este software, usted acepta todos los términos de esta licencia.**
 
 ---
 
-### 📂 Carpetas importantes
-- `backups/` → Aquí se guardan los respaldos.
-- `toolkit_*.log` → Archivos de registro (uno por sesión).
-- `assets_log.txt` → Detalles de los archivos multimedia detectados y respaldados.
-- `temp_backup/` → Carpeta temporal durante el respaldo (se elimina al final).
-- `temp_restore/` → Carpeta temporal durante la recuperación (se elimina al final).
+## 🇬🇧 ENGLISH
+
+### 1. Free Use  
+This software is distributed 100% free of charge for any person or organization. It may be used for personal and/or professional purposes at no cost.
+
+### 2. Donations  
+Voluntary donations are accepted to support development. Donations may only be made through the official link included in the `"Readme.txt"` and `"Leeme.txt"` files of the project.
+
+### 3. Prohibition of Sale  
+It is not permitted to sell, resell, or commercially exploit this software, in whole or in part, under any circumstances, unless expressly authorized in writing by the author. The author reserves the exclusive right to sell it in the future if they so decide.
+
+### 4. Official Distribution Channels  
+Redistribution of this software is only permitted through the author's official channels:  
+- **Official Discord server** (link in the README files and GitHub profile)  
+- **Author's official GitHub profile**  
+
+Redistribution through any other means or service that modifies the official links, alters the script content, or changes its original presentation is prohibited.
+
+### 5. Modifications and Responsibility  
+This software is open source: anyone may review its code. Authorship and rights to this project remain exclusively with the author. If a third party modifies this software and distributes it through unauthorized channels, the author is not responsible for any damage, failures, or issues such versions may cause to third-party systems.
+
+### 6. Warranty Limitation  
+Although the software has been carefully designed and tested, it is not 100% infallible. It is provided **"as is"**, without any kind of warranty, express or implied. Use of this software is at your own risk.
+
+### 7. Redistribution Requests  
+Any individual or company wishing to redistribute this software, even free of charge, must first contact the author to obtain express authorization.
 
 ---
 
-### 💻 Compatibilidad
-- Requiere **PowerShell 7** (el script lo instala si no está presente).
-- Compatible con modo portable de OBS Studio.
-- Funciona en **Windows 7 SP1+, Windows 10 y 11**.
-- Compatible con **OBS Studio 27, 28, 29, 30+** (incluye soporte para `local_file`).
+> ✅ **By using this software, you agree to all terms of this license.**
 
 ---
-
-### 🙌 Créditos
-- Desarrollado por **DarkCore29** (y varias IA's 😄)  
-- **Contacto:**  
-  [Twitch](https://www.twitch.tv/darkc0re29) | [Instagram](https://www.instagram.com/darkcore29_) | [TikTok](https://www.tiktok.com/@darkc0re29/)  
-- **Donaciones/Tips:** [https://streamelements.com/darkc0re29/tip](https://streamelements.com/darkc0re29/tip)
-
----
-
-### 📜 Licencia resumida
-- Uso **100% gratuito** para cualquier persona u organización.
-- Donaciones voluntarias a través del enlace oficial incluido en este archivo.
-- Prohibida la venta, reventa o redistribución fuera de los canales oficiales (Discord y GitHub del autor).
-- Código abierto: puedes revisarlo, pero la autoría sigue siendo del autor.
-- No me hago responsable por versiones modificadas distribuidas por terceros.
-- Si deseas redistribuirlo, incluso gratis, debes contactar al autor.
-
-> Lee el archivo **License.txt** para la licencia completa.
-
----
-
-## 🇬🇧 English
-
-Backup, restore, and maintenance tool for OBS Studio.
-
-**Version:** 1.0  
-**Author:** DarkCore29  
-**Compatible with:** Windows 7/10/11 | OBS Studio (installed or portable)
-
----
-
-### 📌 What does this tool do?
-
-#### 1. ✅ Backup OBS
-- Configurations, scenes, profiles, plugins, and custom folders.
-- Files from the main folder and AppData.
-- `Assets` or `assets` folders (case-insensitive).
-- Automatically detects and backs up media files (`.mp4`, `.png`, `.mp3`, etc.) used in scenes, even if stored outside the `Assets` folder.
-- Generates a `.zip` file with **SHA256** integrity verification.
-- Prevents duplicates if assets are already in the `Assets` folder.
-
-#### 2. ✅ Restore OBS
-- Restore from a `.zip` file or folder backup.
-- Choose where to restore assets:
-  - To their original paths.
-  - Or into a safe folder: `Recovered Assets`.
-- Verifies file integrity before restoring.
-
-#### 3. ✅ Clean logs and cache
-- Deletes temporary OBS files to free up space.
-- Shows how many files and GB/MB will be removed before confirmation.
-
-#### 4. ✅ Automated maintenance
-- Automatically detects OBS Studio (installed or portable).
-- Requires **PowerShell 7** (installs automatically if not present).
-- Includes optional auto-detection and download of **7-Zip**.
-
----
-
-### 🖱 How to use it
-1. Right-click on `Iniciar-Toolkit.bat`
-2. Select **"Run as administrator"**
-3. Follow the menu options.
-
-> **Note:** Must be run as administrator for full file access.
-
----
-
-### 📂 Important folders
-- `backups/` → Backups are saved here.
-- `toolkit_*.log` → Log files (one per session).
-- `assets_log.txt` → Details of detected and backed-up media files.
-- `temp_backup/` → Temporary folder during backup (deleted at the end).
-- `temp_restore/` → Temporary folder during restore (deleted at the end).
-
----
-
-### 💻 Compatibility
-- Requires **PowerShell 7** (script installs it automatically if missing).
-- Compatible with OBS Studio portable mode.
-- Works on **Windows 7 SP1+, Windows 10, and 11**.
-- Supports **OBS Studio 27, 28, 29, 30+** (including `local_file` support).
-
----
-
-### 🙌 Credits
-- Developed by **DarkCore29** (and some AI's 😄)  
-- **Contact:**  
-  [Twitch](https://www.twitch.tv/darkc0re29) | [Instagram](https://www.instagram.com/darkcore29_) | [TikTok](https://www.tiktok.com/@darkc0re29/)  
-- **Donations/Tips:** [https://streamelements.com/darkc0re29/tip](https://streamelements.com/darkc0re29/tip)
-
----
-
-### 📜 Summary of License
-- **100% free** for any person or organization.
-- Voluntary donations via the official link included in this file.
-- Sale, resale, or redistribution outside official channels (author's Discord and GitHub) is prohibited.
-- Open source: you may review the code, but authorship remains with the author.
-- The author is not responsible for modified versions distributed by third parties.
-- If you wish to redistribute, even for free, you must contact the author.
-
-> See **License.txt** for the full license.
