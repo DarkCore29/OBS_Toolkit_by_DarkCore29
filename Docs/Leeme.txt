@@ -3,7 +3,7 @@ OBS Toolkit by DarkCore29
 
 Herramienta de respaldo, recuperación y mantenimiento para OBS Studio.
 
-Versión: 1.0
+Versión: 1.2
 Autor: DarkCore29
 Compatible con: Windows 7/10/11 | OBS Studio (modo normal y portable)
 
@@ -24,7 +24,7 @@ Este toolkit permite:
 2. ✅ RECUPERAR OBS
    - Restaura desde un respaldo .zip o carpeta.
    - Opción de restaurar assets:
-     - En sus rutas originales.
+     - En sus rutas originales (rutas simuladas para ser movidas manualmente).
      - O en una carpeta segura: "Assets Recuperados".
    - Verifica integridad antes de restaurar.
 

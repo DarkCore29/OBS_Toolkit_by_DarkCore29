@@ -6,7 +6,7 @@
 
 Herramienta de respaldo, recuperación y mantenimiento para OBS Studio.
 
-**Versión:** 1.0  
+**Versión:** 1.2  
 **Autor:** DarkCore29  
 **Compatible con:** Windows 7/10/11 | OBS Studio (modo normal y portable)
 
@@ -25,7 +25,7 @@ Herramienta de respaldo, recuperación y mantenimiento para OBS Studio.
 #### 2. ✅ Recuperar OBS
 - Restaura desde un respaldo `.zip` o carpeta.
 - Opción de restaurar assets:
-  - En sus rutas originales.
+  - En sus rutas originales (rutas simuladas para ser movidas manualmente).
   - O en una carpeta segura: `Assets Recuperados`.
 - Verifica integridad antes de restaurar.
 
@@ -90,7 +90,7 @@ Herramienta de respaldo, recuperación y mantenimiento para OBS Studio.
 
 Backup, restore, and maintenance tool for OBS Studio.
 
-**Version:** 1.0  
+**Version:** 1.2  
 **Author:** DarkCore29  
 **Compatible with:** Windows 7/10/11 | OBS Studio (installed or portable)
 
@@ -109,7 +109,7 @@ Backup, restore, and maintenance tool for OBS Studio.
 #### 2. ✅ Restore OBS
 - Restore from a `.zip` file or folder backup.
 - Choose where to restore assets:
-  - To their original paths.
+  - To their original paths (Simulated path).
   - Or into a safe folder: `Recovered Assets`.
 - Verifies file integrity before restoring.
 

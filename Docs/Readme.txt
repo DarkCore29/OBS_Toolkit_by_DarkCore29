@@ -3,7 +3,7 @@ OBS Toolkit by DarkCore29
 
 Backup, restore, and maintenance tool for OBS Studio.
 
-Version: 1.0
+Version: 1.2
 Author: DarkCore29
 Compatible with: Windows 7/10/11 | OBS Studio (installed or portable)
 
@@ -24,7 +24,7 @@ This toolkit allows you to:
 2. ✅ RESTORE OBS
    - Restore from a .zip file or folder backup.
    - Choose where to restore assets:
-     - To their original paths.
+     - To their original paths (Simulated path).
      - Or into a safe folder: "Recovered Assets".
    - Verifies file integrity before restoring.
 

@@ -5,6 +5,43 @@ Este documento registra las versiones, nuevas funciones, mejoras y correcciones 
 
 ---
 
+## ✨ [Versión 1.2] — *16/09/2025*
+
+### ✅ Nuevas Funcionalidades
+- **Validación estricta en selección de opciones**:
+  - Ahora se exige entrada válida (`1` o `2`) en recuperación de assets, evitando elecciones inválidas.
+- **Mensajes bilingües completos en recuperación avanzada**:
+  - Traducción total de descripciones detalladas para mantener estructura de rutas o usar carpeta simple.
+  - Mensajes dinámicos según idioma seleccionado (español/inglés).
+- **Control centralizado del flujo UAC**:
+  - El archivo `.bat` maneja completamente la elevación de privilegios, eliminando bucles infinitos al ejecutar como administrador.
+
+### 🛠️ Mejoras
+- **Reorganización crítica del orden de inicialización**:
+  - `$Messages`, `Write-Log`, `$Lang` y `$LogPath` ahora se cargan en orden correcto, evitando errores de formato `{0}` y logs nulos.
+- **Generación única de logs por sesión**:
+  - Cada ejecución crea un nuevo archivo `toolkit_YYYYMMDD_HHmmss.log`, sin mezclar registros anteriores.
+- **Eliminación segura del lock residual**:
+  - Si existe un bloqueo previo (`OBS_Toolkit_Lock.tmp`), se elimina al inicio, permitiendo reinicios limpios.
+- **Flujo optimizado de instalación de PowerShell 7**:
+  - No muestra advertencias de PS5 cuando se está instalando PS7.
+  - Finaliza correctamente tras instalación, sin continuar con el menú.
+- **Mejora visual en mensaje inicial**:
+  - Se reemplaza `pause` por espera automática de 5 segundos antes del menú principal.
+- **Corrección de acceso a claves numéricas**:
+  - Claves como `"7ZipNotFoundCustomPathPrompt"` ahora usan comillas y acceso seguro (`["clave"]`) para evitar errores de parser.
+
+### 🐛 Correcciones
+- **Error de parser en bloques hash**: corregido al escapar claves que comienzan con números.
+- **Formato incorrecto en mensajes log (`{0}` visible)**:
+  - Solucionado mediante validación de argumentos y uso correcto de `-ArgumentList`.
+- **Uso de `Write-Host -f` no válido**:
+  - Reemplazado por formateo previo con `-f` fuera del cmdlet.
+- **Advertencias falsas de PS5 durante instalación de PS7**:
+  - Suprimidas cuando se usa el flag `-InstallPS7`.
+
+---
+
 ## 🚀 [Versión 1.1] — *22/08/2025*
 
 ### ✅ Nuevas Funcionalidades
@@ -55,12 +92,13 @@ Este documento registra las versiones, nuevas funciones, mejoras y correcciones 
 
 ## 🛠️ Próximas Versiones (Roadmap)
 - [ ] Interfaz gráfica básica (WPF).
-- [ ] Soporte multi-idioma (ESP/ENG).
+- [x] Soporte multi-idioma (ESP/ENG) → **Implementado en v1.2**
+- [ ] Actualización automática integrada.
 
 ---
 
 **Desarrollado por:** DarkCore29  
-**Contacto:** contact.darkcore29@gmail.com | [Twitch](https://www.twitch.tv/darkc0re29) | [Instagram](https://www.instagram.com/darkcore29_)
+**Contacto:** contact.darkcore29@gmail.com | [Twitch](https://www.twitch.tv/darkc0re29) | [Instagram](https://www.instagram.com/darkcore29_)  
 **Repositorio:** [OBS Toolkit](https://github.com/DarkCore29/OBS_Toolkit_by_DarkCore29)  
 
 > ¡Gracias por usar **OBS Toolkit**!
